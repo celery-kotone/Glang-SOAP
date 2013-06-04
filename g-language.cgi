@@ -599,7 +599,7 @@ sub enc{
     }
 
     $in0 = new G::IO($in0,"no msg");
-    require G::Seq::Codon;    my $scaler = G::Seq::Codon::enc($in0,%param);
+    require G::Seq::Codon;        my $scaler = G::Seq::Codon::enc($in0,%param,-output=>"f",-filename=>"$jobid.csv");
 
     return SOAP::Data->type('string')->value($scaler);
 }
